@@ -1,4 +1,4 @@
-name: EAGLE Python Lint Check
+name: EAGLE Project CI
 
 on:
   push:
@@ -38,3 +38,24 @@ jobs:
       - name: Check import order with isort
         run: |
           isort --check-only --diff .
+  
+  bandit:
+    name: Security Check (Bandit)
+    runs-on: ubuntu-latest
+    needs: lint
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Bandit
+        run: pip install bandit
+
+      - name: Run Bandit
+        run: |
+          bandit -r . -lll
