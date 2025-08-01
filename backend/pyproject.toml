@@ -61,3 +61,18 @@ target-version = "py313"
 # pycodestyle, pyflakes, isort, pylint, pyupgrade
 ignore = ["E501"]
 select = ["E", "F", "I", "PL", "UP", "W"]
+
+[tool.black]
+line-length = 88
+exclude = '''
+(
+  /(
+      \.git
+    | alembic
+  )/
+)
+'''
+
+[tool.isort]
+profile = "black"
+skip = ["alembic"]
