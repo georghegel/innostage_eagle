@@ -18,6 +18,8 @@ pyjwt = "^2.10.1"
 python-multipart = "^0.0.20"
 sqlalchemy = { extras = ["asyncio"], version = "^2.0.41" }
 mythic = "^0.2.6"
+gql = "^3.5.3"
+dotenv = "^0.9.9"
 
 [tool.poetry.group.dev.dependencies]
 coverage = "^7.9.1"

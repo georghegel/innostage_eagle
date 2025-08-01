@@ -6,9 +6,10 @@ from app.api.api_router import api_router, auth_router
 from app.core.config import get_settings
 
 app = FastAPI(
-    title="minimal fastapi postgres template",
-    version="6.1.0",
-    description="https://github.com/rafsaf/minimal-fastapi-postgres-template",
+    title="EAGLE",
+    version="0.0.1",
+    description="Emulated Attack Generator w/ Layered Engine"
+                "https://github.com/eogod/EAGLE",
     openapi_url="/openapi.json",
     docs_url="/",
 )
