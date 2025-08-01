@@ -16,3 +16,14 @@ class AccessTokenResponse(BaseResponse):
 class UserResponse(BaseResponse):
     user_id: str
     email: EmailStr
+
+
+class LocalCommandResponse(BaseResponse):
+    user_id: str
+    chain_name: str
+    callback_display_id: int
+    mythic_task_id: int
+    tool_name: str
+    command: str
+    status: str
+    raw_output: str

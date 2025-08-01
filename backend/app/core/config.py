@@ -43,9 +43,18 @@ class Database(BaseModel):
     db: str = "postgres"
 
 
+class Mythic(BaseModel):
+    server_ip: str = "127.0.0.1"
+    username: str = "mythic_admin"
+    password: SecretStr = SecretStr("passwd-change-me")
+    server_port: int = 7443
+    timeout: int = -1
+
+
 class Settings(BaseSettings):
     security: Security = Field(default_factory=Security)
     database: Database = Field(default_factory=Database)
+    mythic: Mythic = Field(default_factory=Mythic) 
     log_level: str = "INFO"
 
     @computed_field  # type: ignore[prop-decorator]
